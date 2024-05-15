@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-function LoginPage() {
+const LoginPage: React.FC = () => {
   return (
     <View style={styles.container}>
       <Image
@@ -46,7 +46,7 @@ function LoginPage() {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
