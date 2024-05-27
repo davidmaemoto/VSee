@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
  View,
  StyleSheet,
@@ -17,12 +17,18 @@ function LoginPage() {
  const screenWidth = Dimensions.get("window").width;
  const formContainerHeight = screenHeight * 0.6;
 
+ const [username, setUsername] = useState("");
+ const [password, setPassword] = useState("");   
 
  const handleLoginPress = () => {
-   // Navigate to HomePage on login press
-   navigation.navigate('Home');
- };
-
+  if (username === "user1@gmail.com" && password === "password1") {
+    // Navigate to HomePage on successful login
+    navigation.navigate('HomePage');
+  } else {
+    // Display error message
+    alert("Invalid credentials. Please enter correct username and password.");
+  }
+};
 
  return (
    <View style={styles.container}>
@@ -39,13 +45,18 @@ function LoginPage() {
        <View style={styles.form}>
          <Text style={styles.title}>LOGIN</Text>
          <View style={styles.inputContainer}>
-           <TextInput style={styles.input} placeholder="Email" />
+          <TextInput 
+            style={styles.input} 
+            placeholder="Email" 
+            onChangeText={(text) => setUsername(text)} // Update username state
+          />
          </View>
          <View style={styles.inputContainer}>
            <TextInput
-             style={styles.input}
-             placeholder="Password"
-             secureTextEntry={true}
+             style={styles.input} 
+             placeholder="Password" 
+             secureTextEntry={true} 
+             onChangeText={(text) => setPassword(text)} // Update password state
            />
          </View>
          <TouchableOpacity style={styles.loginButton} onPress={handleLoginPress}>
