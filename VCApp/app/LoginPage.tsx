@@ -9,6 +9,7 @@ import {
  Dimensions,
 } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import HomePage from "./HomePage";
 
 
 function LoginPage() {
@@ -23,7 +24,7 @@ function LoginPage() {
  const handleLoginPress = () => {
   if (username === "user1@gmail.com" && password === "password1") {
     // Navigate to HomePage on successful login
-    navigation.navigate('HomePage');
+    navigation.navigate(HomePage);
   } else {
     // Display error message
     alert("Invalid credentials. Please enter correct username and password.");
