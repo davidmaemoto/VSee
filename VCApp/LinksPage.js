@@ -1,20 +1,36 @@
+// LinksPage.js
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, ScrollView } from 'react-native';
 
 const LinksPage = ({ navigation }) => {
   return (
-    <View>
-      <Text>Links Page</Text>
+    <ScrollView contentContainerStyle={{ padding: 20 }}>
+      <Text style={{ fontSize: 24, marginBottom: 20 }}>Links Page</Text>
       <Button
-        title="Go to Text Page 1"
-        onPress={() => navigation.navigate('TextPage1')}
+        title="Go to Humidity"
+        onPress={() => navigation.navigate('Humidity')}
       />
       <Button
-        title="Go to Text Page 2"
-        onPress={() => navigation.navigate('TextPage2')}
+        title="Go to Formaldehyde"
+        onPress={() => navigation.navigate('Formaldehyde')}
       />
-      {/* Add more buttons as needed */}
-    </View>
+      <Button
+        title="Go to Particulates"
+        onPress={() => navigation.navigate('Particulates')}
+      />
+      <Button
+        title="Go to Temperature"
+        onPress={() => navigation.navigate('Temperature')}
+      />
+      <Button
+        title="Go to VOC"
+        onPress={() => navigation.navigate('VOC')}
+      />
+      <Button
+        title="Go to CO2"
+        onPress={() => navigation.navigate('CO2')}
+      />
+    </ScrollView>
   );
 };
 
