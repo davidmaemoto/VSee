@@ -15,7 +15,7 @@ const LinksPage = ({ navigation }) => {
         onPress={() => navigation.navigate('Formaldehyde')}
       />
       <Button
-        title="Particulates (PM 1.0, 2.5, 10) "
+        title="Particulate Matter (PM 1.0, 2.5, 10)"
         onPress={() => navigation.navigate('Particulates')}
       />
       <Button
