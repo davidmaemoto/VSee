@@ -7,27 +7,27 @@ const LinksPage = ({ navigation }) => {
     <ScrollView contentContainerStyle={{ padding: 20 }}>
       <Text style={{ fontSize: 24, marginBottom: 20 }}>Links Page</Text>
       <Button
-        title="Go to Humidity"
+        title="Humidity"
         onPress={() => navigation.navigate('Humidity')}
       />
       <Button
-        title="Go to Formaldehyde"
+        title="Formaldehyde"
         onPress={() => navigation.navigate('Formaldehyde')}
       />
       <Button
-        title="Go to Particulates"
+        title="Particulates (PM 1.0, 2.5, 10) "
         onPress={() => navigation.navigate('Particulates')}
       />
       <Button
-        title="Go to Temperature"
+        title="Temperature"
         onPress={() => navigation.navigate('Temperature')}
       />
       <Button
-        title="Go to VOC"
+        title="Volatile Organic Compounds (VOC)"
         onPress={() => navigation.navigate('VOC')}
       />
       <Button
-        title="Go to CO2"
+        title="Carbon Dioxide (CO2)"
         onPress={() => navigation.navigate('CO2')}
       />
     </ScrollView>
