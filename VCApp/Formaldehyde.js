@@ -4,11 +4,13 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 const Formaldehyde = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.heading}>Formaldehyde</Text>
+      <View style={styles.banner}>
+        <Text style={styles.bannerText}>Formaldehyde</Text>
+      </View>
       <Text style={styles.text}>
         HCHO (CH₂O, Formaldehyde)
         {"\n\n"}
-        Associated Illnesses:
+        <Text style={styles.boldUnderline}>Associated Illnesses:</Text>
         {"\n"}
         - Eye irritation
         {"\n"}
@@ -20,9 +22,9 @@ const Formaldehyde = () => {
         {"\n"}
         - Cancer (particularly leukemia)
         {"\n\n"}
-        Safe Ranges: Exposure starting between 50-123 micrograms/milliliter cubed becomes harmful.
+        <Text style={styles.boldUnderline}>Safe Ranges:</Text> Exposure starting between 50-123 micrograms/milliliter cubed becomes harmful.
         {"\n\n"}
-        Ways to reduce harm:
+        <Text style={styles.boldUnderline}>Ways to reduce harm:</Text>
         {"\n"}
         - Avoid long-term exposure to industrial emissions in air sources
         {"\n"}
@@ -35,18 +37,28 @@ const Formaldehyde = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff', // Change background color to white
   },
-  heading: {
-    fontSize: 24,
+  banner: {
+    width: '100%',
+    padding: 10,
+    backgroundColor: 'green',
+    alignItems: 'center',
     marginBottom: 20,
-    fontFamily: 'Arial', // Match font family
-    color: '#450', // Match text color
+  },
+  bannerText: {
+    fontSize: 24,
+    color: 'white',
+    fontFamily: 'Arial',
   },
   text: {
     fontSize: 16,
-    fontFamily: 'Arial', // Match font family
-    color: '#450', // Match text color
+    fontFamily: 'Arial',
+    color: '#450',
+  },
+  boldUnderline: {
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
   },
 });
 
