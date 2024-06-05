@@ -1,17 +1,18 @@
-
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 const Particulates = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.heading}>Particulates</Text>
+      <View style={styles.banner}>
+        <Text style={styles.bannerText}>Particulates</Text>
+      </View>
       <Text style={styles.text}>
         PM1.0, PM 2.5, PM10
         {"\n\n"}
         All stand for “particulate matter” followed by the size in micrometers of each particle. The smaller the particle size, the more harmful to human health.
         {"\n\n"}
-        Associated Illnesses:
+        <Text style={styles.boldUnderline}>Associated Illnesses:</Text>
         {"\n"}
         - Worsened heart and lung issues
         {"\n"}
@@ -21,7 +22,7 @@ const Particulates = () => {
         {"\n"}
         - Worsened asthma
         {"\n\n"}
-        Ways to reduce harm:
+        <Text style={styles.boldUnderline}>Ways to reduce harm:</Text>
         {"\n"}
         - Avoid indoor burning
         {"\n"}
@@ -36,18 +37,28 @@ const Particulates = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff', // Change background color to white
   },
-  heading: {
-    fontSize: 24,
+  banner: {
+    width: '100%',
+    padding: 10,
+    backgroundColor: 'green',
+    alignItems: 'center',
     marginBottom: 20,
-    fontFamily: 'Arial', // Match font family
-    color: '#450', // Match text color
+  },
+  bannerText: {
+    fontSize: 24,
+    color: 'white',
+    fontFamily: 'Arial',
   },
   text: {
     fontSize: 16,
-    fontFamily: 'Arial', // Match font family
-    color: '#450', // Match text color
+    fontFamily: 'Arial',
+    color: '#450',
+  },
+  boldUnderline: {
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
   },
 });
 
