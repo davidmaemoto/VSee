@@ -18,6 +18,6 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "app/InfoPage.jsx"  ]
 }
 

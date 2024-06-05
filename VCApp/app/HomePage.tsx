@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
   }, []);
 
   const navigateToInfoPage = () => {
-    // Navigate to Info Page
+    navigation.navigate('Info');
   };
 
   const navigateToHomePage = () => {
