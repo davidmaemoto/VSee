@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 
 const HomePage: React.FC = () => {
   const [weather, setWeather] = useState<any>(null);
-
+  const navigation = useNavigation();
   useEffect(() => {
     const fetchWeatherData = async () => {
       try {
@@ -25,11 +26,11 @@ const HomePage: React.FC = () => {
   };
 
   const navigateToHomePage = () => {
-    // Navigate to Home Page
+    //nothing should happen
   };
 
   const navigateToMapPage = () => {
-    // Navigate to Map Page
+    navigation.navigate('Map');
   };
 
   return (

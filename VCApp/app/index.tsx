@@ -1,21 +1,23 @@
-import React from "react";
-import { View, StyleSheet } from "react-native";
-import LoginPage from "./LoginPage"; // Ensure the path is correct
+// App.tsx or index.tsx
 
-const Index: React.FC = () => {
+import * as React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import LoginPage from './LoginPage'; // Ensure the path is correct
+import HomePage from './HomePage'; // Ensure the path is correct
+import MapPage from './MapPage'; // Ensure the path is correct
+import InfoPage from './InfoPage'; // Ensure the path is correct
+
+const Stack = createStackNavigator();
+
+const App: React.FC = () => {
   return (
-    <View style={styles.container}>
-      <LoginPage />
-    </View>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={LoginPage} options={{ headerShown: false }} />
+        <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="Map" component={MapPage} />
+        <Stack.Screen name="Info" component={InfoPage} />
+      </Stack.Navigator>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-});
-
-export default Index;
+export default App;
