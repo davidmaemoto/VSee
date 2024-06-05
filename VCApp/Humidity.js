@@ -4,9 +4,11 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 const Humidity = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.heading}>Humidity</Text>
+      <View style={styles.banner}>
+        <Text style={styles.bannerText}>Humidity</Text>
+      </View>
       <Text style={styles.text}>
-        Associated illnesses:
+        <Text style={styles.boldUnderline}>Associated illnesses:</Text>
         {"\n\n"}
         - See temperature-related risks above
         {"\n"}
@@ -16,9 +18,9 @@ const Humidity = () => {
         {"\n"}
         - Chronic kidney disease associated with increased sweating
         {"\n\n"}
-        Safe range: Indoor humidity between 30 and 50% is ideal for human health.
+        <Text style={styles.boldUnderline}>Safe range:</Text> Indoor humidity between 30 and 50% is ideal for human health.
         {"\n\n"}
-        Ways to reduce harm:
+        <Text style={styles.boldUnderline}>Ways to reduce harm:</Text>
         {"\n"}
         - Dehumidify
         {"\n"}
@@ -31,21 +33,29 @@ const Humidity = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff', // Change background color to white
   },
-  heading: {
-    fontSize: 24,
+  banner: {
+    width: '100%',
+    padding: 10,
+    backgroundColor: 'green',
+    alignItems: 'center',
     marginBottom: 20,
-    fontFamily: 'Arial', // Match font family
-    color: '#450', // Match text color
+  },
+  bannerText: {
+    fontSize: 24,
+    color: 'white',
+    fontFamily: 'Arial',
   },
   text: {
     fontSize: 16,
-    fontFamily: 'Arial', // Match font family
-    color: '#450', // Match text color
+    fontFamily: 'Arial',
+    color: '#450',
+  },
+  boldUnderline: {
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
   },
 });
 
 export default Humidity;
-
-
