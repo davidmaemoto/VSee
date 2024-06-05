@@ -4,9 +4,11 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 const Temperature = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.heading}>Temperature</Text>
+      <View style={styles.banner}>
+        <Text style={styles.bannerText}>Temperature</Text>
+      </View>
       <Text style={styles.text}>
-        Associated illnesses:
+        <Text style={styles.boldUnderline}>Associated illnesses:</Text>
         {"\n\n"}
         - Heat cramps
         {"\n"}
@@ -18,9 +20,9 @@ const Temperature = () => {
         {"\n"}
         - Worsened chronic conditions, particularly pulmonary and cardiovascular-related conditions.
         {"\n\n"}
-        Safe range: In the range of 90-105 degrees F, the risk of heat exhaustion and heat cramps begins. With strenuous work, this risk begins at 77 degrees F.
+        <Text style={styles.boldUnderline}>Safe range:</Text> In the range of 90-105 degrees F, the risk of heat exhaustion and heat cramps begins. With strenuous work, this risk begins at 77 degrees F.
         {"\n\n"}
-        Ways to reduce harm:
+        <Text style={styles.boldUnderline}>Ways to reduce harm:</Text>
         {"\n"}
         - Apply sunscreen
         {"\n"}
@@ -39,18 +41,28 @@ const Temperature = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff', // Change background color to white
   },
-  heading: {
-    fontSize: 24,
+  banner: {
+    width: '100%',
+    padding: 10,
+    backgroundColor: 'green',
+    alignItems: 'center',
     marginBottom: 20,
-    fontFamily: 'Arial', // Match font family
-    color: '#450', // Match text color
+  },
+  bannerText: {
+    fontSize: 24,
+    color: 'white',
+    fontFamily: 'Arial',
   },
   text: {
     fontSize: 16,
-    fontFamily: 'Arial', // Match font family
-    color: '#450', // Match text color
+    fontFamily: 'Arial',
+    color: '#450',
+  },
+  boldUnderline: {
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
   },
 });
 
