@@ -4,9 +4,11 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 const VOC = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.heading}>VOC (Volatile Organic Compounds)</Text>
+      <View style={styles.banner}>
+        <Text style={styles.bannerText}>VOC (Volatile Organic Compounds)</Text>
+      </View>
       <Text style={styles.text}>
-        Associated illnesses:
+        <Text style={styles.boldUnderline}>Associated illnesses:</Text>
         {"\n\n"}
         - Breathing them in can irritate the eyes, nose, and throat
         {"\n"}
@@ -16,9 +18,9 @@ const VOC = () => {
         {"\n"}
         - Can sometimes cause cancer
         {"\n\n"}
-        Safe range: Unsafe levels start at 2,200 - 30,000 ppb.
+        <Text style={styles.boldUnderline}>Safe range:</Text> Unsafe levels start at 2,200 - 30,000 ppb.
         {"\n\n"}
-        Ways to reduce harm:
+        <Text style={styles.boldUnderline}>Ways to reduce harm:</Text>
         {"\n"}
         - Avoid remaining in enclosed spaces with the following sources:
         {"\n"}
@@ -41,18 +43,28 @@ const VOC = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff', // Change background color to white
   },
-  heading: {
-    fontSize: 24,
+  banner: {
+    width: '100%',
+    padding: 10,
+    backgroundColor: 'green',
+    alignItems: 'center',
     marginBottom: 20,
-    fontFamily: 'Arial', // Match font family
-    color: '#450', // Match text color
+  },
+  bannerText: {
+    fontSize: 24,
+    color: 'white',
+    fontFamily: 'Arial',
   },
   text: {
     fontSize: 16,
-    fontFamily: 'Arial', // Match font family
-    color: '#450', // Match text color
+    fontFamily: 'Arial',
+    color: '#450',
+  },
+  boldUnderline: {
+    fontWeight: 'bold',
+    textDecorationLine: 'underline',
   },
 });
 
