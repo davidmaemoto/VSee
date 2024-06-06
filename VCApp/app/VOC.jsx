@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 const VOC = () => {
   return (
+    <View style={styles.container}>
+
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.banner}>
         <Text style={styles.bannerText}>VOC (Volatile Organic Compounds)</Text>
@@ -37,13 +39,20 @@ const VOC = () => {
         - Industrial processes
       </Text>
     </ScrollView>
+    </View>
+
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
-    backgroundColor: '#fff', // Change background color to white
+    flex: 1,
+    width: '100%',
+    maxWidth: 480,
+    backgroundColor: '#fff',
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 10,
   },
   banner: {
     width: '100%',

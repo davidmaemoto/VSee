@@ -17,7 +17,15 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Tab.Navigator screenOptions={{headerShown:false}}/>
+
+      <Stack.Navigator
+        initialRouteName="Login"
+              screenOptions={{
+          headerMode:'none',
+          headerShown: false, // This hides the default header
+        }}
+      >
         <Stack.Screen name="Login" component={LoginPage} />
         <Stack.Screen name="Home" component={HomePage} />
         <Stack.Screen name="Links" component={LinksPage} />
